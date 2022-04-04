@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import axios from "axios"
 import './App.css';
 
 function App() {
+  useEffect(()=>{
+    axios.get("https://floral-limit-25e3.139199228.workers.dev/api").then(data=>{
+      console.log(data)
+    })
+  },[])
   
-  axios.get("/api").then(data=>{
-    console.log(data)
-  })
   return (
     <div className="App">
       <header className="App-header">
